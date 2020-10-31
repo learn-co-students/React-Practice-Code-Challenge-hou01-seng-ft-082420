@@ -56,6 +56,13 @@ class App extends Component {
     }
   }
 
+  addFunds = () => {
+    console.log('$$$')
+    this.setState({
+      funds: this.state.funds + 10
+    })
+  }
+
   render() {
     return (
       <div className="app">
@@ -65,7 +72,10 @@ class App extends Component {
         consumeSushi= {this.consumeSushi}
         eatenSushi={this.state.eatenSushi}
         />
-        <Table funds={this.state.funds} eatenSushi={this.state.eatenSushi}/>
+        <Table funds={this.state.funds} 
+        eatenSushi={this.state.eatenSushi}
+        addFunds = {this.addFunds}
+        />
       </div>
     );
   }

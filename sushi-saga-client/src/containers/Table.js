@@ -24,6 +24,7 @@ const Table = (props) => {
             renderPlates(props.eatenSushi)
           }
         </div>
+        <button onClick={()=>props.addFunds()}>Add Funds</button>
       </div>
     </Fragment>
   )
