@@ -8,20 +8,25 @@ const Table = (props) => {
     })
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    props.addMoney(e.target.amount)
+  }
+
   return (
     <Fragment>
+      <form onSubmit={(e) => handleSubmit(e)}>
+        <label>Add Money: </label>
+        <input name="amount" type="number" />
+          <input type="submit" />
+      </form>
       <h1 className="remaining">
-        You have: ${ /* Give me how much money I have left */ } remaining!
+        You have: ${props.money} remaining!
       </h1>
       <div className="table">
         <div className="stack">
           {
-            /* 
-               renderPlates takes an array 
-               and renders an empty plate
-               for every element in the array
-            */
-            renderPlates([])
+            renderPlates(props.eaten)
           }
         </div>
       </div>
